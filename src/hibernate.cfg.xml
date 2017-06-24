@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+   <session-factory>
+
+	   <!-- db connection settings -->
+	   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+	   <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernateTutorials</property>
+	   <property name="hibernate.connection.username">root</property>
+	   <property name="hibernate.connection.password">jj</property>
+	
+		<!-- JDBC connection pool -->
+		<property name="connection.pool_size">1</property>
+	
+		<!-- sql dialect -->
+	   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>		
+	
+		<!-- Echo all executed sql to stdout -->
+		<property name="show_sql">true</property>
+	
+		<!-- drop the existing tables and create new one -->
+		<property name="hbm2ddl.auto">create</property>
+	
+		<!-- mention here all the model classes along with their package name -->
+		<mapping class="com.samplecodebase.hibernate.Student_Info"></mapping>
+	
+	   <!-- List of XML mapping files 
+	   <mapping resource="Employee.hbm.xml"/>
+		-->
+	</session-factory>
+</hibernate-configuration>
